@@ -1,18 +1,98 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8" />
-		<title></title>
-		<style>
-			html, body {
-			  height: 100%;
-			  margin: 0;
-			  padding: 0;
-			}
-		</style>
-	</head>
-	<body>
-		<iframe src="
-https://docs.qq.com/sheet/DWnlKZElTbmxLYUNS" width="100%" height="100%"></iframe>
-	</body>
+<head>
+  <title>固定表头和冻结列的表格</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <style>
+    .table-container {
+      max-height: 400px;
+      overflow: auto;
+    }
+
+    .fixed-header {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      background-color: #f8f9fa;
+    }
+
+    .fixed-column {
+      position: sticky;
+      left: 0;
+      z-index: 1;
+      background-color: #f8f9fa;
+    }
+	
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="table-container">
+          <table class="table table-bordered">
+            <thead>
+              <tr class="fixed-header">
+                <th>固定表头1</th>
+                <th>表头2</th>
+                <th>表头3</th>
+				<th>表头3</th>
+				<th>表头3</th>
+				<th>表头3</th>
+				<th>表头3</th>
+				<th>表头3</th>
+              </tr>
+            </thead>
+            <tbody id="table-body">
+              <!-- 动态生成的表格行将插入到这里 -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // 假设您有一个从服务器获取的数据数组，每个元素包含三个属性（固定列1，列2，列3）。
+    var data = [
+      { fixedColumn1: '冻结列1', column2: '数据2', column3: '数据3' },
+      { fixedColumn1: '冻结列4', column2: '数据5', column3: '数据6' },
+      { fixedColumn1: '冻结列4', column2: '数据5', column3: '数据6' },
+      { fixedColumn1: '冻结列4', column2: '数据5', column3: '数据6' },
+      { fixedColumn1: '冻结列4', column2: '数据5', column3: '数据6' },
+      { fixedColumn1: '冻结列4', column2: '数据5', column3: '数据6' },
+      { fixedColumn1: '冻结列4', column2: '数据5', column3: '数据6' },
+      { fixedColumn1: '冻结列4', column2: '数据5', column3: '数据6' },
+      { fixedColumn1: '冻结列4', column2: '数据5', column3: '数据6' },
+      { fixedColumn1: '冻结列4', column2: '数据5', column3: '数据6' },
+      { fixedColumn1: '冻结列4', column2: '数据5', column3: '数据6' },
+      { fixedColumn1: '冻结列4', column2: '数据5', column3: '数据6' },
+      { fixedColumn1: '冻结列4', column2: '数据5', column3: '数据6' },
+      { fixedColumn1: '冻结列4', column2: '数据5', column3: '数据6' },
+      { fixedColumn1: '冻结列4', column2: '数据5', column3: '数据6' },
+      { fixedColumn1: '冻结列4', column2: '数据5', column3: '数据6' },
+      { fixedColumn1: '冻结列4', column2: '数据5', column3: '数据6' },
+      { fixedColumn1: '冻结列4', column2: '数据5', column3: '数据6' },
+      { fixedColumn1: '冻结列4', column2: '数据5', column3: '数据6' },
+      { fixedColumn1: '冻结列4', column2: '数据5', column3: '数据6' },
+      { fixedColumn1: '冻结列4', column2: '数据5', column3: '数据6' },
+      { fixedColumn1: '冻结列4', column2: '数据5', column3: '数据6' },
+      { fixedColumn1: '冻结列4', column2: '数据5', column3: '数据6' },
+      { fixedColumn1: '冻结列4', column2: '数据5', column3: '数据6' },
+      { fixedColumn1: '冻结列4', column2: '数据5', column3: '数据6' },
+      { fixedColumn1: '冻结列7', column2: '数据8', column3: '数据9' }
+      // 添加更多数据...
+    ];
+
+    // 动态生成表格行
+    var tableBody = document.getElementById('table-body');
+    for (var i = 0; i < data.length; i++) {
+      var row = document.createElement('tr');
+      row.innerHTML = '<td class="fixed-column">' + data[i].fixedColumn1 + '</td>' +
+                      '<td>' + data[i].column2 + '</td>' +
+                      '<td>' + data[i].column3 + '</td>';
+      tableBody.appendChild(row);
+    }
+  </script>
+</body>
 </html>
