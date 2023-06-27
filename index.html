@@ -33,14 +33,18 @@
           <table class="table table-bordered">
             <thead>
               <tr class="fixed-header">
-                <th>固定表头1</th>
-                <th>表头2</th>
-                <th>表头3</th>
-				<th>表头3</th>
-				<th>表头3</th>
-				<th>表头3</th>
-				<th>表头3</th>
-				<th>表头3</th>
+                <th> </th>
+                <th>00</th>
+                <th>01</th>
+				<th>02</th>
+				<th>03</th>
+				<th>04</th>
+				<th>05</th>
+				<th>06</th>
+				<th>07</th>
+				<th>08</th>
+				<th>09</th>
+				<th>10</th>
               </tr>
             </thead>
             <tbody id="table-body">
@@ -55,32 +59,11 @@
   <script>
     // 假设您有一个从服务器获取的数据数组，每个元素包含三个属性（固定列1，列2，列3）。
     var data = [
-      { fixedColumn1: '冻结列1', column2: '数据2', column3: '数据3' },
-      { fixedColumn1: '冻结列4', column2: '数据5', column3: '数据6' },
-      { fixedColumn1: '冻结列4', column2: '数据5', column3: '数据6' },
-      { fixedColumn1: '冻结列4', column2: '数据5', column3: '数据6' },
-      { fixedColumn1: '冻结列4', column2: '数据5', column3: '数据6' },
-      { fixedColumn1: '冻结列4', column2: '数据5', column3: '数据6' },
-      { fixedColumn1: '冻结列4', column2: '数据5', column3: '数据6' },
-      { fixedColumn1: '冻结列4', column2: '数据5', column3: '数据6' },
-      { fixedColumn1: '冻结列4', column2: '数据5', column3: '数据6' },
-      { fixedColumn1: '冻结列4', column2: '数据5', column3: '数据6' },
-      { fixedColumn1: '冻结列4', column2: '数据5', column3: '数据6' },
-      { fixedColumn1: '冻结列4', column2: '数据5', column3: '数据6' },
-      { fixedColumn1: '冻结列4', column2: '数据5', column3: '数据6' },
-      { fixedColumn1: '冻结列4', column2: '数据5', column3: '数据6' },
-      { fixedColumn1: '冻结列4', column2: '数据5', column3: '数据6' },
-      { fixedColumn1: '冻结列4', column2: '数据5', column3: '数据6' },
-      { fixedColumn1: '冻结列4', column2: '数据5', column3: '数据6' },
-      { fixedColumn1: '冻结列4', column2: '数据5', column3: '数据6' },
-      { fixedColumn1: '冻结列4', column2: '数据5', column3: '数据6' },
-      { fixedColumn1: '冻结列4', column2: '数据5', column3: '数据6' },
-      { fixedColumn1: '冻结列4', column2: '数据5', column3: '数据6' },
-      { fixedColumn1: '冻结列4', column2: '数据5', column3: '数据6' },
-      { fixedColumn1: '冻结列4', column2: '数据5', column3: '数据6' },
-      { fixedColumn1: '冻结列4', column2: '数据5', column3: '数据6' },
-      { fixedColumn1: '冻结列4', column2: '数据5', column3: '数据6' },
-      { fixedColumn1: '冻结列7', column2: '数据8', column3: '数据9' }
+      { fixedColumn1: '105', column00: '廉颇', column01: '地狱岩魂', column02: '无尽征程', column03: '寅虎·御盾', column04: ' ', column05: ' ', column06: ' ', column07: ' ', column08: ' ', column09: ' ', column10: ' ' },
+										
+		{ fixedColumn1: '106', column00: '小乔', column01: '万圣前夜', column02: '天鹅之梦', column03: '纯白花嫁', column04: '缤纷独角兽', column05: '丁香结', column06: '青蛇', column07: '音你心动', column08: ' ', column09: ' ', column10: ' ' },
+		{ fixedColumn1: '', column00: '', column01: '', column02: '', column03: '', column04: '', column05: '', column06: '', column07: '', column08: '', column09: '', column10: '' }
+
       // 添加更多数据...
     ];
 
@@ -89,8 +72,17 @@
     for (var i = 0; i < data.length; i++) {
       var row = document.createElement('tr');
       row.innerHTML = '<td class="fixed-column">' + data[i].fixedColumn1 + '</td>' +
-                      '<td>' + data[i].column2 + '</td>' +
-                      '<td>' + data[i].column3 + '</td>';
+					'<td>' + data[i].column00 + '</td>' +
+                      '<td>' + data[i].column01 + '</td>' +
+					  '<td>' + data[i].column02 + '</td>' +
+                      '<td>' + data[i].column03 + '</td>' +
+                      '<td>' + data[i].column04 + '</td>' +
+                      '<td>' + data[i].column05 + '</td>' +
+                      '<td>' + data[i].column06 + '</td>' +
+                      '<td>' + data[i].column07 + '</td>' +
+                      '<td>' + data[i].column08 + '</td>' +
+                      '<td>' + data[i].column09 + '</td>' +
+                      '<td>' + data[i].column10 + '</td>';
       tableBody.appendChild(row);
     }
   </script>
